@@ -1,0 +1,83 @@
+@use "../../global" as g;
+
+/*!
+page > top > top-common
+------------------------------
+*/
+
+.top-modal-button {
+  margin-top: 40px;
+  position: relative;
+  left: 50%;
+  transform: translatex(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background-color: var(--color-accent);
+  font-weight: bold;
+  padding: 5px 20px;
+  border: 1px solid var(--color-accent);
+  border-radius: 6px;
+  text-align: center;
+  transition: background-color 0.3s, box-shadow 0.3s, color 0.3s;
+  box-shadow: 0 0 0 1px transparent inset, 0 0 0 4px transparent inset;
+
+  @media (any-hover: hover) {
+    &:hover {
+      color: var(--color-font-base);
+      background-color: var(--color-hover);
+    }
+  }
+}
+
+.top-modal {
+  border: none;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  overscroll-behavior: none;
+}
+
+.top-modal::backdrop {
+  background-color: rgba(0, 0, 0, 0);
+  transition: background-color 0.3s ease-out;
+}
+
+.top-modal.is-open::backdrop {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.top-modal-inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.top-modal-contents {
+  background-color: #fff;
+  width: 90%;
+  max-width: 500px;
+  padding: 40px;
+  position: relative;
+}
+
+.top-modal-close-button {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 34px;
+  height: 34px;
+  border-radius: 4px;
+  background-color: #dedddd;
+  display: grid;
+  place-items: center;
+  transition: background-color 0.3s;
+
+  img {
+    width: 24px;
+    height: 24px;
+  }
+}

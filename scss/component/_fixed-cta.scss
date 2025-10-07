@@ -1,0 +1,32 @@
+@use "../global" as g;
+
+/*!
+component > fixed-cta
+------------------------------
+*/
+.c-fixed-cta-wrapper {
+  padding-top: 100px;
+  max-width: 760px;
+  margin-inline: auto;
+}
+
+.c-fixed-cta {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  width: 100px;
+  height: 100px;
+  place-items: center;
+  background-color: #393939;
+  color: #fff;
+  z-index: var(--z-index-menu);
+  display: none;
+
+  @include g.mq() {
+    width: 200px;
+  }
+}
+
+.c-fixed-cta.is-fixed {
+  display: grid;
+}

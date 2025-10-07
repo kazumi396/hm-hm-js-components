@@ -1,0 +1,23 @@
+@use "../global" as g;
+
+/*!
+layout > footer
+------------------------------
+*/
+.l-footer {
+  margin-top: 40px;
+  padding: 16px;
+  background-color: #e6e6e6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include g.mq() {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  p {
+    font-size: 13px;
+  }
+}

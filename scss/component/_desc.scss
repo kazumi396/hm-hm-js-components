@@ -1,0 +1,23 @@
+@use "../global" as g;
+
+/*!
+component > desc
+------------------------------
+*/
+.c-desc-list {
+  padding-bottom: 20px;
+}
+
+.c-desc {
+  font-size: 14px;
+  line-height: 1.5;
+  margin-top: 10px;
+  list-style-type: disc;
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+
+  &::before {
+    content: "・";
+  }
+}

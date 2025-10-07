@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080">
+  <defs>
+    <style>
+      .code-bg {
+        font-family: 'Courier New', monospace;
+        font-size: 14px;
+        fill: #333;
+        opacity: 0.08;
+      }
+      .title {
+        font-family: 'Courier New', monospace;
+        font-size: 72px;
+        font-weight: bold;
+        fill: #333;
+        letter-spacing: 1.5px;
+      }
+      .subtitle {
+        font-family: 'Courier New', monospace;
+        font-size: 24px;
+        fill: #333;
+        opacity: 0.8;
+      }
+    </style>
+  </defs>
+  
+  <rect width="1920" height="1080" fill="#e6e6e6"/>
+  
+  <!-- 背景コードパターン -->
+  <text class="code-bg" x="40" y="40">
+    <tspan x="40" dy="1.6em">const initializeFixedCta = () => {</tspan>
+    <tspan x="40" dy="1.6em">  const ctaElement = document.querySelector(".js-cta");</tspan>
+    <tspan x="40" dy="1.6em">  ScrollTrigger.create({</tspan>
+    <tspan x="40" dy="1.6em">    trigger: kvElement,</tspan>
+    <tspan x="40" dy="1.6em">    start: "bottom bottom-=80",</tspan>
+    <tspan x="40" dy="1.6em">    onEnter: show,</tspan>
+    <tspan x="40" dy="1.6em">  });</tspan>
+    <tspan x="40" dy="1.6em">};</tspan>
+    <tspan x="40" dy="1.6em"></tspan>
+    <tspan x="40" dy="1.6em">function debounce(func, wait) {</tspan>
+    <tspan x="40" dy="1.6em">  let timeout;</tspan>
+    <tspan x="40" dy="1.6em">  return function executedFunction(...args) {</tspan>
+    <tspan x="40" dy="1.6em">    clearTimeout(timeout);</tspan>
+    <tspan x="40" dy="1.6em">    timeout = setTimeout(() => func(...args), wait);</tspan>
+    <tspan x="40" dy="1.6em">  };</tspan>
+    <tspan x="40" dy="1.6em">}</tspan>
+    <tspan x="40" dy="1.6em"></tspan>
+    <tspan x="40" dy="1.6em">export function initSmoothScroll() {</tspan>
+    <tspan x="40" dy="1.6em">  gsap.to(window, {</tspan>
+    <tspan x="40" dy="1.6em">    scrollTo: target,</tspan>
+    <tspan x="40" dy="1.6em">    duration: 0.8,</tspan>
+    <tspan x="40" dy="1.6em">    ease: "power2.inOut"</tspan>
+    <tspan x="40" dy="1.6em">  });</tspan>
+    <tspan x="40" dy="1.6em">}</tspan>
+    <tspan x="40" dy="1.6em"></tspan>
+    <tspan x="40" dy="1.6em">const observer = new IntersectionObserver((entries) => {</tspan>
+    <tspan x="40" dy="1.6em">  entries.forEach(entry => {</tspan>
+    <tspan x="40" dy="1.6em">    if (entry.isIntersecting) {</tspan>
+    <tspan x="40" dy="1.6em">      entry.target.classList.add("is-visible");</tspan>
+    <tspan x="40" dy="1.6em">    }</tspan>
+    <tspan x="40" dy="1.6em">  });</tspan>
+    <tspan x="40" dy="1.6em">});</tspan>
+    <tspan x="40" dy="1.6em"></tspan>
+    <tspan x="40" dy="1.6em">window.addEventListener("resize", () => {</tspan>
+    <tspan x="40" dy="1.6em">  ScrollTrigger.refresh();</tspan>
+    <tspan x="40" dy="1.6em">});</tspan>
+    <tspan x="40" dy="1.6em"></tspan>
+    <tspan x="40" dy="1.6em">const handleClick = (e) => {</tspan>
+    <tspan x="40" dy="1.6em">  e.preventDefault();</tspan>
+    <tspan x="40" dy="1.6em">  const href = e.currentTarget.getAttribute("href");</tspan>
+    <tspan x="40" dy="1.6em">  scrollToElement(href);</tspan>
+    <tspan x="40" dy="1.6em">};</tspan>
+    <tspan x="40" dy="1.6em"></tspan>
+    <tspan x="40" dy="1.6em">gsap.registerPlugin(ScrollTrigger);</tspan>
+    <tspan x="40" dy="1.6em"></tspan>
+    <tspan x="40" dy="1.6em">const fadeIn = (element) => {</tspan>
+    <tspan x="40" dy="1.6em">  gsap.to(element, {</tspan>
+    <tspan x="40" dy="1.6em">    autoAlpha: 1,</tspan>
+    <tspan x="40" dy="1.6em">    duration: 0.6,</tspan>
+    <tspan x="40" dy="1.6em">    ease: "power2.out"</tspan>
+    <tspan x="40" dy="1.6em">  });</tspan>
+    <tspan x="40" dy="1.6em">};</tspan>
+  </text>
+  
+  <text class="code-bg" x="960" y="40">
+    <tspan x="960" dy="1.6em">export default class Accordion {</tspan>
+    <tspan x="960" dy="1.6em">  constructor(element) {</tspan>
+    <tspan x="960" dy="1.6em">    this.element = element;</tspan>
+    <tspan x="960" dy="1.6em">    this.init();</tspan>
+    <tspan x="960" dy="1.6em">  }</tspan>
+    <tspan x="960" dy="1.6em"></tspan>
+    <tspan x="960" dy="1.6em">  init() {</tspan>
+    <tspan x="960" dy="1.6em">    this.element.addEventListener("click", (e) => {</tspan>
+    <tspan x="960" dy="1.6em">      this.toggle(e);</tspan>
+    <tspan x="960" dy="1.6em">    });</tspan>
+    <tspan x="960" dy="1.6em">  }</tspan>
+    <tspan x="960" dy="1.6em">}</tspan>
+    <tspan x="960" dy="1.6em"></tspan>
+    <tspan x="960" dy="1.6em">const lazyLoad = () => {</tspan>
+    <tspan x="960" dy="1.6em">  const images = document.querySelectorAll("img[data-src]");</tspan>
+    <tspan x="960" dy="1.6em">  </tspan>
+    <tspan x="960" dy="1.6em">  const imageObserver = new IntersectionObserver((entries) => {</tspan>
+    <tspan x="960" dy="1.6em">    entries.forEach(entry => {</tspan>
+    <tspan x="960" dy="1.6em">      if (entry.isIntersecting) {</tspan>
+    <tspan x="960" dy="1.6em">        const img = entry.target;</tspan>
+    <tspan x="960" dy="1.6em">        img.src = img.dataset.src;</tspan>
+    <tspan x="960" dy="1.6em">        imageObserver.unobserve(img);</tspan>
+    <tspan x="960" dy="1.6em">      }</tspan>
+    <tspan x="960" dy="1.6em">    });</tspan>
+    <tspan x="960" dy="1.6em">  });</tspan>
+    <tspan x="960" dy="1.6em"></tspan>
+    <tspan x="960" dy="1.6em">  images.forEach(img => imageObserver.observe(img));</tspan>
+    <tspan x="960" dy="1.6em">};</tspan>
+    <tspan x="960" dy="1.6em"></tspan>
+    <tspan x="960" dy="1.6em">const throttle = (func, limit) => {</tspan>
+    <tspan x="960" dy="1.6em">  let inThrottle;</tspan>
+    <tspan x="960" dy="1.6em">  return function() {</tspan>
+    <tspan x="960" dy="1.6em">    if (!inThrottle) {</tspan>
+    <tspan x="960" dy="1.6em">      func.apply(this, arguments);</tspan>
+    <tspan x="960" dy="1.6em">      inThrottle = true;</tspan>
+    <tspan x="960" dy="1.6em">      setTimeout(() => inThrottle = false, limit);</tspan>
+    <tspan x="960" dy="1.6em">    }</tspan>
+    <tspan x="960" dy="1.6em">  }</tspan>
+    <tspan x="960" dy="1.6em">};</tspan>
+    <tspan x="960" dy="1.6em"></tspan>
+    <tspan x="960" dy="1.6em">document.addEventListener("DOMContentLoaded", () => {</tspan>
+    <tspan x="960" dy="1.6em">  initializeFixedCta();</tspan>
+    <tspan x="960" dy="1.6em">  lazyLoad();</tspan>
+    <tspan x="960" dy="1.6em">});</tspan>
+  </text>
+  
+  <!-- メインテキスト -->
+  <text class="title" x="960" y="480" text-anchor="middle">JavaScript Works</text>
+  <text class="subtitle" x="960" y="540" text-anchor="middle">Frontend Development Portfolio</text>
+</svg>

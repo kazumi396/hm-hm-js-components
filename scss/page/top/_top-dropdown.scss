@@ -1,0 +1,67 @@
+@use "../../global" as g;
+
+/*!
+page > top > top-dropdown
+------------------------------
+*/
+.top-dropdown-button {
+  margin-top: 40px;
+  display: grid;
+  place-items: center;
+  width: 80px;
+  height: 80px;
+  background-color: #e5e2e2;
+  border: 1px solid #bebdbd;
+  border-radius: 100vh;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  img {
+    width: 50%;
+    aspect-ratio: 1;
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: var(--color-hover);
+    }
+  }
+}
+
+.top-dropdown-list {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+}
+
+.top-dropdown-list.is-open {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0s;
+}
+
+.top-dropdown-item {
+  background-color: #e5e2e2;
+  border: 1px solid #bebdbd;
+  border-radius: 4px;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease;
+
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: var(--color-hover);
+    }
+  }
+}
+
+.top-contents {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  p {
+    font-size: 15px;
+  }
+}

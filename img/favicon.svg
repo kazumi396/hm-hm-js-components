@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <style>
+      .code-bg {
+        font-family: 'Courier New', monospace;
+        font-size: 16px;
+        fill: #333;
+        opacity: 0.12;
+      }
+      .js-text {
+        font-family: 'Courier New', monospace;
+        font-weight: bold;
+        fill: #333;
+      }
+    </style>
+  </defs>
+  
+  <rect width="512" height="512" fill="#e6e6e6"/>
+  
+  <!-- 背景コードパターン -->
+  <text class="code-bg" x="20" y="20">
+    <tspan x="20" dy="1.4em">const init = () =&gt; {</tspan>
+    <tspan x="20" dy="1.4em">  const element =</tspan>
+    <tspan x="20" dy="1.4em">    document</tspan>
+    <tspan x="20" dy="1.4em">    .querySelector</tspan>
+    <tspan x="20" dy="1.4em">    (".js-cta");</tspan>
+    <tspan x="20" dy="1.4em">  </tspan>
+    <tspan x="20" dy="1.4em">  ScrollTrigger</tspan>
+    <tspan x="20" dy="1.4em">    .create({</tspan>
+    <tspan x="20" dy="1.4em">    trigger: el,</tspan>
+    <tspan x="20" dy="1.4em">    start: "bottom",</tspan>
+    <tspan x="20" dy="1.4em">    onEnter: show</tspan>
+    <tspan x="20" dy="1.4em">  });</tspan>
+    <tspan x="20" dy="1.4em">};</tspan>
+    <tspan x="20" dy="1.4em"></tspan>
+    <tspan x="20" dy="1.4em">function debounce</tspan>
+    <tspan x="20" dy="1.4em">  (func, wait) {</tspan>
+    <tspan x="20" dy="1.4em">  let timeout;</tspan>
+    <tspan x="20" dy="1.4em">  return function</tspan>
+    <tspan x="20" dy="1.4em">    (...args) {</tspan>
+    <tspan x="20" dy="1.4em">    clearTimeout</tspan>
+    <tspan x="20" dy="1.4em">      (timeout);</tspan>
+    <tspan x="20" dy="1.4em">    timeout =</tspan>
+    <tspan x="20" dy="1.4em">      setTimeout</tspan>
+    <tspan x="20" dy="1.4em">      (() =&gt; {</tspan>
+    <tspan x="20" dy="1.4em">      func(...args)</tspan>
+    <tspan x="20" dy="1.4em">    }, wait);</tspan>
+    <tspan x="20" dy="1.4em">  };</tspan>
+    <tspan x="20" dy="1.4em">}</tspan>
+  </text>
+  
+  <!-- 中央の "JS" テキスト -->
+  <text class="js-text" x="256" y="310" text-anchor="middle" font-size="180">JS</text>
+</svg>

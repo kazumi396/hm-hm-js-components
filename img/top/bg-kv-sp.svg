@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 1334" width="750" height="1334">
+  <defs>
+    <style>
+      .code-bg {
+        font-family: 'Courier New', monospace;
+        font-size: 12px;
+        fill: #333;
+        opacity: 0.08;
+      }
+      .title {
+        font-family: 'Courier New', monospace;
+        font-size: 48px;
+        font-weight: bold;
+        fill: #333;
+        letter-spacing: 1px;
+      }
+      .subtitle {
+        font-family: 'Courier New', monospace;
+        font-size: 16px;
+        fill: #333;
+        opacity: 0.8;
+      }
+    </style>
+  </defs>
+  
+  <rect width="750" height="1334" fill="#e6e6e6"/>
+  
+  <!-- 背景コードパターン（1列レイアウト） -->
+  <text class="code-bg" x="30" y="30">
+    <tspan x="30" dy="1.6em">const initializeFixedCta = () => {</tspan>
+    <tspan x="30" dy="1.6em">  const ctaElement = document</tspan>
+    <tspan x="30" dy="1.6em">    .querySelector(".js-cta");</tspan>
+    <tspan x="30" dy="1.6em">  const kvElement = document</tspan>
+    <tspan x="30" dy="1.6em">    .querySelector(".js-kv");</tspan>
+    <tspan x="30" dy="1.6em">  </tspan>
+    <tspan x="30" dy="1.6em">  ScrollTrigger.create({</tspan>
+    <tspan x="30" dy="1.6em">    trigger: kvElement,</tspan>
+    <tspan x="30" dy="1.6em">    start: "bottom bottom-=80",</tspan>
+    <tspan x="30" dy="1.6em">    onEnter: show,</tspan>
+    <tspan x="30" dy="1.6em">    onLeaveBack: hide</tspan>
+    <tspan x="30" dy="1.6em">  });</tspan>
+    <tspan x="30" dy="1.6em">};</tspan>
+    <tspan x="30" dy="1.6em"></tspan>
+    <tspan x="30" dy="1.6em">function debounce(func, wait) {</tspan>
+    <tspan x="30" dy="1.6em">  let timeout;</tspan>
+    <tspan x="30" dy="1.6em">  return function(...args) {</tspan>
+    <tspan x="30" dy="1.6em">    clearTimeout(timeout);</tspan>
+    <tspan x="30" dy="1.6em">    timeout = setTimeout(() => {</tspan>
+    <tspan x="30" dy="1.6em">      func(...args);</tspan>
+    <tspan x="30" dy="1.6em">    }, wait);</tspan>
+    <tspan x="30" dy="1.6em">  };</tspan>
+    <tspan x="30" dy="1.6em">}</tspan>
+    <tspan x="30" dy="1.6em"></tspan>
+    <tspan x="30" dy="1.6em">export function initSmoothScroll() {</tspan>
+    <tspan x="30" dy="1.6em">  const links = document</tspan>
+    <tspan x="30" dy="1.6em">    .querySelectorAll('a[href^="#"]');</tspan>
+    <tspan x="30" dy="1.6em">  </tspan>
+    <tspan x="30" dy="1.6em">  links.forEach(link => {</tspan>
+    <tspan x="30" dy="1.6em">    link.addEventListener("click",</tspan>
+    <tspan x="30" dy="1.6em">      (e) => {</tspan>
+    <tspan x="30" dy="1.6em">      e.preventDefault();</tspan>
+    <tspan x="30" dy="1.6em">      const target = e.currentTarget</tspan>
+    <tspan x="30" dy="1.6em">        .getAttribute("href");</tspan>
+    <tspan x="30" dy="1.6em">      </tspan>
+    <tspan x="30" dy="1.6em">      gsap.to(window, {</tspan>
+    <tspan x="30" dy="1.6em">        scrollTo: target,</tspan>
+    <tspan x="30" dy="1.6em">        duration: 0.8,</tspan>
+    <tspan x="30" dy="1.6em">        ease: "power2.inOut"</tspan>
+    <tspan x="30" dy="1.6em">      });</tspan>
+    <tspan x="30" dy="1.6em">    });</tspan>
+    <tspan x="30" dy="1.6em">  });</tspan>
+    <tspan x="30" dy="1.6em">}</tspan>
+    <tspan x="30" dy="1.6em"></tspan>
+    <tspan x="30" dy="1.6em">const observer = new</tspan>
+    <tspan x="30" dy="1.6em">  IntersectionObserver((entries) => {</tspan>
+    <tspan x="30" dy="1.6em">  entries.forEach(entry => {</tspan>
+    <tspan x="30" dy="1.6em">    if (entry.isIntersecting) {</tspan>
+    <tspan x="30" dy="1.6em">      entry.target.classList</tspan>
+    <tspan x="30" dy="1.6em">        .add("is-visible");</tspan>
+    <tspan x="30" dy="1.6em">    }</tspan>
+    <tspan x="30" dy="1.6em">  });</tspan>
+    <tspan x="30" dy="1.6em">});</tspan>
+    <tspan x="30" dy="1.6em"></tspan>
+    <tspan x="30" dy="1.6em">window.addEventListener("resize",</tspan>
+    <tspan x="30" dy="1.6em">  () => {</tspan>
+    <tspan x="30" dy="1.6em">  ScrollTrigger.refresh();</tspan>
+    <tspan x="30" dy="1.6em">});</tspan>
+    <tspan x="30" dy="1.6em"></tspan>
+    <tspan x="30" dy="1.6em">export default class Accordion {</tspan>
+    <tspan x="30" dy="1.6em">  constructor(element) {</tspan>
+    <tspan x="30" dy="1.6em">    this.element = element;</tspan>
+    <tspan x="30" dy="1.6em">    this.content = element</tspan>
+    <tspan x="30" dy="1.6em">      .querySelector(".accordion");</tspan>
+    <tspan x="30" dy="1.6em">    this.init();</tspan>
+    <tspan x="30" dy="1.6em">  }</tspan>
+    <tspan x="30" dy="1.6em">  </tspan>
+    <tspan x="30" dy="1.6em">  init() {</tspan>
+    <tspan x="30" dy="1.6em">    this.element.addEventListener(</tspan>
+    <tspan x="30" dy="1.6em">      "click", () => {</tspan>
+    <tspan x="30" dy="1.6em">      this.toggle();</tspan>
+    <tspan x="30" dy="1.6em">    });</tspan>
+    <tspan x="30" dy="1.6em">  }</tspan>
+    <tspan x="30" dy="1.6em">}</tspan>
+    <tspan x="30" dy="1.6em"></tspan>
+    <tspan x="30" dy="1.6em">const lazyLoad = () => {</tspan>
+    <tspan x="30" dy="1.6em">  const images = document</tspan>
+    <tspan x="30" dy="1.6em">    .querySelectorAll("img[data-src]");</tspan>
+    <tspan x="30" dy="1.6em">  </tspan>
+    <tspan x="30" dy="1.6em">  images.forEach(img => {</tspan>
+    <tspan x="30" dy="1.6em">    imageObserver.observe(img);</tspan>
+    <tspan x="30" dy="1.6em">  });</tspan>
+    <tspan x="30" dy="1.6em">};</tspan>
+    <tspan x="30" dy="1.6em"></tspan>
+    <tspan x="30" dy="1.6em">const throttle = (func, limit) => {</tspan>
+    <tspan x="30" dy="1.6em">  let inThrottle;</tspan>
+    <tspan x="30" dy="1.6em">  return function() {</tspan>
+    <tspan x="30" dy="1.6em">    if (!inThrottle) {</tspan>
+    <tspan x="30" dy="1.6em">      func.apply(this, arguments);</tspan>
+    <tspan x="30" dy="1.6em">      inThrottle = true;</tspan>
+    <tspan x="30" dy="1.6em">      setTimeout(() => {</tspan>
+    <tspan x="30" dy="1.6em">        inThrottle = false;</tspan>
+    <tspan x="30" dy="1.6em">      }, limit);</tspan>
+    <tspan x="30" dy="1.6em">    }</tspan>
+    <tspan x="30" dy="1.6em">  }</tspan>
+    <tspan x="30" dy="1.6em">};</tspan>
+  </text>
+  
+  <!-- メインテキスト -->
+  <text class="title" x="375" y="600" text-anchor="middle">JavaScript</text>
+  <text class="title" x="375" y="660" text-anchor="middle">Works</text>
+  <text class="subtitle" x="375" y="710" text-anchor="middle">Frontend Development</text>
+  <text class="subtitle" x="375" y="740" text-anchor="middle">Portfolio</text>
+</svg>

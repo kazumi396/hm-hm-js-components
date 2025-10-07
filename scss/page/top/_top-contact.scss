@@ -1,0 +1,22 @@
+@use "../../global" as g;
+
+/*!
+page > top > top-contact
+------------------------------
+*/
+.top-contact {
+  height: 100vh;
+  background-color: #e6e6e6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  span {
+    font-size: 30px;
+    font-weight: bold;
+
+    @include g.mq() {
+      font-size: 50px;
+    }
+  }
+}
