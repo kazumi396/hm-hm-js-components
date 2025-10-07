@@ -30,19 +30,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet" />
 
     <!-- css -->
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style.css?v=20251007-3" />
 
     <!-- js -->
     <script src="js/vendor/gsap.min.js" defer></script>
     <script src="js/vendor/ScrollTrigger.min.js" defer></script>
-    <script src="js/main.js" type="module"></script>
+    <script src="js/main.js?v=20251007-2" type="module"></script>
 
     <!-- noindex -->
     <meta name="robots" content="noindex, nofollow" />
   </head>
   <body>
     <header class="l-header l-container js-header">
-      <h1 class="l-header-logo">LOGO</h1>
+      <h1 class="l-header-logo"><a href="#">LOGO</a></h1>
 
       <dialog class="l-header-menu js-menu" aria-label="メニュー">
         <button class="l-header-menu-close-button js-close-button">close</button>
@@ -54,6 +54,9 @@
             </li>
             <li class="l-header-menu-item">
               <a href="#hamburger" class="js-menu-item-link">ハンバーガーメニュー</a>
+            </li>
+            <li class="l-header-menu-item">
+              <a href="#smooth-scroll" class="js-menu-item-link">スムーススクロール</a>
             </li>
             <li class="l-header-menu-item">
               <a href="#drop-down-menu" class="js-menu-item-link">ドロップダウンメニュー</a>
@@ -77,178 +80,189 @@
       <button class="l-header-menu-open-button js-open-button">menu</button>
     </header>
 
-    <div class="top-kv js-kv"></div>
-    <div class="top-kv-bg">
-      <picture>
-        <source srcset="img/top/bg-kv.svg" media="(min-width: 768px)" />
-        <img src="img/top/bg-kv-sp.svg" width="750" height="1334" alt="" decoding="async" />
-      </picture>
-    </div>
-    <div class="l-container-s">
-      <!-- cta -->
-      <div class="">
-        <a href="#contact" class="c-fixed-cta js-cta">CTA</a>
+    <main>
+      <div class="top-kv js-kv">
+        <picture>
+          <source srcset="img/top/bg-kv.svg" media="(min-width: 1080px)" />
+          <img src="img/top/bg-kv-sp.svg" width="750" height="1334" alt="" decoding="async" />
+        </picture>
       </div>
-
-      <div class="js-scroll-target">
-        <!-- ヘッダー -->
-        <div class="u-ptb-l" id="header">
-          <div class="u-card">
-            <h2 class="c-title">スクロールヘッダー</h2>
-            <ul>
-              <li><p class="c-desc">Intersection Observerを使用して実装しています。</p></li>
-              <li><p class="c-desc">キービジュアルが画面から消えると固定表示され、背景が黒くメニューの文字が白くなります。</p></li>
-            </ul>
-          </div>
+      <div class="l-container-s">
+        <!-- cta -->
+        <div class="">
+          <a href="#contact" class="c-fixed-cta js-cta">CTA</a>
         </div>
 
-        <!-- ハンバーガーメニュー -->
-        <div class="u-ptb-l" id="hamburger">
-          <div class="u-card">
-            <h2 class="c-title">ハンバーガーメニュー</h2>
-            <ul>
-              <li><p class="c-desc">MENUボタンをクリックでメニューが表示されます。</p></li>
-              <li><p class="c-desc">CLOSEボタンをクリックするとメニューが非表示になります。</p></li>
-              <li><p class="c-desc">各メニューへのリンクをクリックするとメニューが非表示になります。</p></li>
-              <li><p class="c-desc">Escapeキーを押すとメニューが非表示になります。</p></li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- ドロップダウンメニュー -->
-        <div class="u-ptb-l" id="drop-down-menu">
-          <div class="u-card">
-            <h2 class="c-title">ドロップダウンメニュー</h2>
-            <ul class="c-desc-list">
-              <li><p class="c-desc">ボタンをクリックするとメニューが表示/非表示されます。</p></li>
-              <li><p class="c-desc">メニュー外をクリックするとメニューが非表示になります。</p></li>
-              <li><p class="c-desc">Escapeキーを押すとメニューが非表示になります。</p></li>
-            </ul>
-
-            <button class="top-dropdown-button js-dropdown-button"><img src="img/arrow-drop-down.svg" width="24" height="24" alt="" decoding="async" /><span class="u-visually-hidden">アカウント：山田太郎</span></button>
-            <ul class="top-dropdown-list js-dropdown-list">
-              <li class="top-dropdown-item"><a href="https://www.google.com/" target="_blank" rel="noopener noreferrer">アカウント設定</a></li>
-              <li class="top-dropdown-item"><a href="https://www.google.com/" target="_blank" rel="noopener noreferrer">カード情報</a></li>
-              <li class="top-dropdown-item"><a href="https://www.google.com/" target="_blank" rel="noopener noreferrer">購入履歴</a></li>
-              <li class="top-dropdown-item"><button>ログアウト</button></li>
-            </ul>
-            <div class="top-contents">
-              <p>親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。</p>
+        <div class="js-scroll-target">
+          <!-- ヘッダー -->
+          <div class="u-ptb-l" id="header">
+            <div class="u-card">
+              <h2 class="c-title">スクロールヘッダー</h2>
+              <ul>
+                <li><p class="c-desc">Intersection Observerを使用して実装しています。</p></li>
+                <li><p class="c-desc">キービジュアルが画面から消えると固定表示され、背景が黒くメニューの文字が白くなります。</p></li>
+              </ul>
             </div>
           </div>
-        </div>
 
-        <!-- モーダル -->
-        <div class="u-ptb-l" id="modal">
-          <div class="u-card">
-            <h2 class="c-title">モーダル</h2>
-            <ul class="c-desc-list">
-              <li><p class="c-desc">OPENボタンをクリックするとモーダルが表示されます。</p></li>
-              <li><p class="c-desc">CLOSE（×）ボタンをクリックするとモーダルが非表示になります。</p></li>
-              <li><p class="c-desc">背景をクリックするとモーダルが非表示になります。</p></li>
-              <li><p class="c-desc">Escapeキーを押すとモーダルが非表示になります。</p></li>
-            </ul>
-            <button class="top-modal-button js-modal-button">モーダルOPEN</button>
-            <dialog class="top-modal js-modal" aria-label="〇〇のモーダル">
-              <div class="top-modal-inner">
-                <div class="top-modal-contents js-modal-contents">
-                  <button class="top-modal-close-button js-modal-close-button">
-                    <span class="u-visually-hidden">閉じる</span>
-                    <img src="img/modal-close.svg" width="24" height="24" alt="" />
-                  </button>
-
-                  <p>親譲りの<a href="https://www.google.com" target="_blank" rel="noopener noreferrer">無鉄砲で</a>小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。</p>
-                </div>
-              </div>
-            </dialog>
+          <!-- ハンバーガーメニュー -->
+          <div class="u-ptb-l" id="hamburger">
+            <div class="u-card">
+              <h2 class="c-title">ハンバーガーメニュー</h2>
+              <ul>
+                <li><p class="c-desc">MENUボタンをクリックでメニューが表示されます。</p></li>
+                <li><p class="c-desc">CLOSEボタンをクリックするとメニューが非表示になります。</p></li>
+                <li><p class="c-desc">各メニューへのリンクをクリックするとメニューが非表示になります。</p></li>
+                <li><p class="c-desc">Escapeキーを押すとメニューが非表示になります。</p></li>
+              </ul>
+            </div>
           </div>
-        </div>
 
-        <!-- タブメニュー -->
-        <div class="u-ptb-l" id="tab-menu">
-          <div class="u-card">
-            <h2 class="c-title">タブメニュー</h2>
-            <ul class="c-desc-list">
-              <li><p class="c-desc">タブをクリックするとコンテンツがフェードアップで表示されます。</p></li>
-              <li><p class="c-desc">選択されていないタブはopacity: 0.4で表示されます。</p></li>
-            </ul>
-            <ul class="top-tabmenu-list">
-              <li class="top-tabmenu-item">
-                <button class="top-tabmenu-tab is-active" data-button="0">坊っちゃん</button>
-              </li>
-              <li class="top-tabmenu-item">
-                <button class="top-tabmenu-tab" data-button="1">徒然草</button>
-              </li>
-            </ul>
+          <!-- スムーススクロール -->
+          <div class="u-ptb-l" id="smooth-scroll">
+            <div class="u-card">
+              <h2 class="c-title">スムーススクロール</h2>
+              <ul>
+                <li><p class="c-desc">ページ内のアンカーリンク（#で始まる href）をクリックした際に、目的の位置まで滑らかにスクロールします。</p></li>
+              </ul>
+            </div>
+          </div>
 
-            <div class="top-tabmenu-contents-wrap">
-              <div class="top-tabmenu-contents is-active" data-content="0">
-                <p>親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から首を出していたら、同級生の一人が冗談に、いくら威張っても、そこから飛び降りる事は出来まい。弱虫やーい。と囃したからである。小使に負ぶさって帰って来た時、おやじが大きな眼をして二階ぐらいから飛び降りて腰を抜かす奴があるかと云ったから、この次は抜かさずに飛んで見せますと答えた。（青空文庫より）</p>
-              </div>
+          <!-- ドロップダウンメニュー -->
+          <div class="u-ptb-l" id="drop-down-menu">
+            <div class="u-card">
+              <h2 class="c-title">ドロップダウンメニュー</h2>
+              <ul class="c-desc-list">
+                <li><p class="c-desc">ボタンをクリックするとメニューが表示/非表示されます。</p></li>
+                <li><p class="c-desc">メニュー外をクリックするとメニューが非表示になります。</p></li>
+                <li><p class="c-desc">Escapeキーを押すとメニューが非表示になります。</p></li>
+              </ul>
 
-              <div class="top-tabmenu-contents" data-content="1">
-                <p>つれづれなるまゝに、日暮らし、硯にむかひて、心にうつりゆくよしなし事を、そこはかとなく書きつくれば、あやしうこそものぐるほしけれ。（Wikipediaより）</p>
+              <button class="top-dropdown-button js-dropdown-button"><img src="img/arrow-drop-down.svg" width="24" height="24" alt="" decoding="async" /><span class="u-visually-hidden">アカウント：山田太郎</span></button>
+              <ul class="top-dropdown-list js-dropdown-list">
+                <li class="top-dropdown-item"><a href="https://www.google.com/" target="_blank" rel="noopener noreferrer">アカウント設定</a></li>
+                <li class="top-dropdown-item"><a href="https://www.google.com/" target="_blank" rel="noopener noreferrer">カード情報</a></li>
+                <li class="top-dropdown-item"><a href="https://www.google.com/" target="_blank" rel="noopener noreferrer">購入履歴</a></li>
+                <li class="top-dropdown-item"><button>ログアウト</button></li>
+              </ul>
+              <div class="top-contents">
+                <p>親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。</p>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- アコーディオン -->
-        <div class="u-ptb-l" id="accordion">
-          <div class="u-card">
-            <h2 class="c-title">アコーディオン</h2>
-            <ul class="c-desc-list">
-              <li><p class="c-desc">アコーディオン(+)をクリックするとコンテンツが表示されます。</p></li>
-              <li><p class="c-desc">アコーディオン(-)をクリックするとコンテンツが閉じます。</p></li>
-              <li><p class="c-desc">連打防止対策を行っています。</p></li>
-            </ul>
-            <div class="top-accordion-wrapper">
-              <details class="top-accordion-details js-details">
-                <summary class="top-accordion-summary js-summary">
-                  <span>Q. クレジットカードで支払えますか？</span>
-                  <span class="top-accordion-icon">
-                    <span></span>
-                    <span></span>
-                  </span>
-                </summary>
-                <div class="top-accordion-contents js-accordion-content">
-                  <div class="top-accordion-contents-inner">
-                    <p>親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から首を出していたら、同級生の一人が冗談に、いくら威張っても、そこから飛び降りる事は出来まい。弱虫やーい。と囃したからである。小使に負ぶさって帰って来た時、おやじが大きな眼をして二階ぐらいから飛び降りて腰を抜かす奴があるかと云ったから、この次は抜かさずに飛んで見せますと答えた。（青空文庫より）</p>
+          <!-- モーダル -->
+          <div class="u-ptb-l" id="modal">
+            <div class="u-card">
+              <h2 class="c-title">モーダル</h2>
+              <ul class="c-desc-list">
+                <li><p class="c-desc">OPENボタンをクリックするとモーダルが表示されます。</p></li>
+                <li><p class="c-desc">CLOSE（×）ボタンをクリックするとモーダルが非表示になります。</p></li>
+                <li><p class="c-desc">背景をクリックするとモーダルが非表示になります。</p></li>
+                <li><p class="c-desc">Escapeキーを押すとモーダルが非表示になります。</p></li>
+              </ul>
+              <button class="top-modal-button js-modal-button">モーダルOPEN</button>
+              <dialog class="top-modal js-modal" aria-label="〇〇のモーダル">
+                <div class="top-modal-inner">
+                  <div class="top-modal-contents js-modal-contents">
+                    <button class="top-modal-close-button js-modal-close-button">
+                      <span class="u-visually-hidden">閉じる</span>
+                      <img src="img/modal-close.svg" width="24" height="24" alt="" />
+                    </button>
+
+                    <p>親譲りの<a href="https://www.google.com" target="_blank" rel="noopener noreferrer">無鉄砲で</a>小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。</p>
                   </div>
                 </div>
-              </details>
+              </dialog>
+            </div>
+          </div>
 
-              <details class="top-accordion-details js-details">
-                <summary class="top-accordion-summary js-summary">
-                  <span>Q. クレジットカードで支払えますか？</span>
-                  <span class="top-accordion-icon">
-                    <span></span>
-                    <span></span>
-                  </span>
-                </summary>
-                <div class="top-accordion-contents js-accordion-content">
-                  <div class="top-accordion-contents-inner">
-                    <p>つれづれなるまゝに、日暮らし、硯にむかひて、心にうつりゆくよしなし事を、そこはかとなく書きつくれば、あやしうこそものぐるほしけれ。（Wikipediaより）</p>
-                  </div>
+          <!-- タブメニュー -->
+          <div class="u-ptb-l" id="tab-menu">
+            <div class="u-card">
+              <h2 class="c-title">タブメニュー</h2>
+              <ul class="c-desc-list">
+                <li><p class="c-desc">タブをクリックするとコンテンツがフェードアップで表示されます。</p></li>
+                <li><p class="c-desc">選択されていないタブはopacity: 0.4で表示されます。</p></li>
+              </ul>
+              <ul class="top-tabmenu-list">
+                <li class="top-tabmenu-item">
+                  <button class="top-tabmenu-tab is-active" data-button="0">坊っちゃん</button>
+                </li>
+                <li class="top-tabmenu-item">
+                  <button class="top-tabmenu-tab" data-button="1">徒然草</button>
+                </li>
+              </ul>
+
+              <div class="top-tabmenu-contents-wrap">
+                <div class="top-tabmenu-contents is-active" data-content="0">
+                  <p>親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から首を出していたら、同級生の一人が冗談に、いくら威張っても、そこから飛び降りる事は出来まい。弱虫やーい。と囃したからである。小使に負ぶさって帰って来た時、おやじが大きな眼をして二階ぐらいから飛び降りて腰を抜かす奴があるかと云ったから、この次は抜かさずに飛んで見せますと答えた。（青空文庫より）</p>
                 </div>
-              </details>
+
+                <div class="top-tabmenu-contents" data-content="1">
+                  <p>つれづれなるまゝに、日暮らし、硯にむかひて、心にうつりゆくよしなし事を、そこはかとなく書きつくれば、あやしうこそものぐるほしけれ。（Wikipediaより）</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- アコーディオン -->
+          <div class="u-ptb-l" id="accordion">
+            <div class="u-card">
+              <h2 class="c-title">アコーディオン</h2>
+              <ul class="c-desc-list">
+                <li><p class="c-desc">アコーディオン(+)をクリックするとコンテンツが表示されます。</p></li>
+                <li><p class="c-desc">アコーディオン(-)をクリックするとコンテンツが閉じます。</p></li>
+                <li><p class="c-desc">連打防止対策を行っています。</p></li>
+              </ul>
+              <div class="top-accordion-wrapper">
+                <details class="top-accordion-details js-details">
+                  <summary class="top-accordion-summary js-summary">
+                    <span>Q. クレジットカードで支払えますか？</span>
+                    <span class="top-accordion-icon">
+                      <span></span>
+                      <span></span>
+                    </span>
+                  </summary>
+                  <div class="top-accordion-contents js-accordion-content">
+                    <div class="top-accordion-contents-inner">
+                      <p>親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から首を出していたら、同級生の一人が冗談に、いくら威張っても、そこから飛び降りる事は出来まい。弱虫やーい。と囃したからである。小使に負ぶさって帰って来た時、おやじが大きな眼をして二階ぐらいから飛び降りて腰を抜かす奴があるかと云ったから、この次は抜かさずに飛んで見せますと答えた。（青空文庫より）</p>
+                    </div>
+                  </div>
+                </details>
+
+                <details class="top-accordion-details js-details">
+                  <summary class="top-accordion-summary js-summary">
+                    <span>Q. クレジットカードで支払えますか？</span>
+                    <span class="top-accordion-icon">
+                      <span></span>
+                      <span></span>
+                    </span>
+                  </summary>
+                  <div class="top-accordion-contents js-accordion-content">
+                    <div class="top-accordion-contents-inner">
+                      <p>つれづれなるまゝに、日暮らし、硯にむかひて、心にうつりゆくよしなし事を、そこはかとなく書きつくれば、あやしうこそものぐるほしけれ。（Wikipediaより）</p>
+                    </div>
+                  </div>
+                </details>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <!-- ctaの説明 -->
-      <div class="u-ptb-l" id="cta">
-        <div class="u-card">
-          <h2 class="c-title">固定CTA</h2>
-          <ul class="c-desc-list">
-            <li><p class="c-desc">キービジュアルの下端+100px以降で固定CTAを表示します。</p></li>
-            <li></li>
-            <li><p class="c-desc">contactセクション以降では固定CTAを非表示にします。</p></li>
-          </ul>
+        <!-- ctaの説明 -->
+        <div class="u-ptb-l" id="cta">
+          <div class="u-card">
+            <h2 class="c-title">固定CTA</h2>
+            <ul class="c-desc-list">
+              <li><p class="c-desc">キービジュアルの下端+150px以降で固定CTAを表示します。</p></li>
+              <li></li>
+              <li><p class="c-desc">contactセクション以降では固定CTAを非表示にします。</p></li>
+            </ul>
+          </div>
         </div>
+        <div id="contact" class="top-contact js-contact"><span>contact</span></div>
       </div>
-      <div id="contact" class="top-contact js-contact"><span>contact</span></div>
-    </div>
+    </main>
     <footer class="l-footer">
       <p>※このページはHello MentorのJavaScript課題として制作したものをまとめたものです。</p>
       <p>&copy; 2025 kazumi</p>

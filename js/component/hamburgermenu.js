@@ -36,15 +36,22 @@ export const initializeHamburgerMenu = () => {
     document.body.style.overflow = "hidden";
   };
 
-  // メニューcloseする関数
-  const closeMenu = () => {
-    const closingAnim = menu.animate(contentsClosingKeyframes, contentsClosingOptions);
-
-    // アニメーションの完了後
-    closingAnim.onfinish = () => {
+  // メニューcloseする関数（skipAnimationでアニメーションをスキップ可能）
+  const closeMenu = (skipAnimation = false) => {
+    if (skipAnimation) {
+      // アニメーションなしで即座に閉じる
       menu.close();
       document.body.style.overflow = "";
-    };
+    } else {
+      // 通常のアニメーション付きクローズ
+      const closingAnim = menu.animate(contentsClosingKeyframes, contentsClosingOptions);
+
+      // アニメーションの完了後
+      closingAnim.onfinish = () => {
+        menu.close();
+        document.body.style.overflow = "";
+      };
+    }
   };
 
   // ボタンクリックでopen
@@ -67,10 +74,10 @@ export const initializeHamburgerMenu = () => {
     }
   });
 
-  // ウィンドウリサイズ時の処理：PC表示時（768px以上）は自動でメニューを閉じる
+  // ウィンドウリサイズ時の処理：PC表示時（768px以上）は自動でメニューを閉じる（アニメーションなし）
   window.addEventListener("resize", () => {
     if (window.innerWidth >= 768) {
-      closeMenu();
+      closeMenu(true); // アニメーションをスキップ
     }
   });
 };

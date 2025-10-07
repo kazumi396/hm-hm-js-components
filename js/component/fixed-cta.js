@@ -1,8 +1,8 @@
-/**
- * 固定CTA表示機能
- * 指定された表示トリガー要素の下端+80px以降で固定CTAを表示する
- * 指定された非表示トリガー要素以降では固定CTAを非表示にする
- */
+// /**
+//  * 固定CTA表示機能
+//  * 指定された表示トリガー要素の下端+80px以降で固定CTAを表示する
+//  * 指定された非表示トリガー要素以降では固定CTAを非表示にする
+//  */
 export function initializeFixedCta() {
   const ctaElement = document.querySelector(".js-cta");
   const kvElement = document.querySelector(".js-kv");
@@ -39,7 +39,7 @@ export function initializeFixedCta() {
 
   ScrollTrigger.create({
     trigger: kvElement,
-    start: " bottom=+100 bottom",
+    start: "bottom bottom-=150",
     onEnter: show,
     onLeaveBack: hide,
   });
@@ -49,6 +49,10 @@ export function initializeFixedCta() {
     start: "top 90%",
     onEnter: hide,
     onLeaveBack: show,
+  });
+
+  window.addEventListener("load", () => {
+    ScrollTrigger.refresh();
   });
 
   window.addEventListener("resize", () => {

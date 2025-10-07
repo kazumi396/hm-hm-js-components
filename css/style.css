@@ -213,10 +213,6 @@ iframe {
 foundation > base
 ------------------------------
 */
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   line-height: 1.8;
   font-size: 16px;
@@ -401,7 +397,7 @@ layout > header
   max-height: none;
   background-color: rgba(38, 38, 38, 0.95);
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1080px) {
   .l-header-menu {
     display: block;
     position: static;
@@ -431,7 +427,7 @@ layout > header
 .l-header-menu-nav {
   width: 100%;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1080px) {
   .l-header-menu-nav {
     width: auto;
   }
@@ -442,7 +438,7 @@ layout > header
   flex-direction: column;
   gap: 16px;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1080px) {
   .l-header-menu-list {
     flex-direction: row;
     gap: 24px;
@@ -456,7 +452,7 @@ layout > header
   font-size: 20px;
   text-align: center;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1080px) {
   .l-header-menu-item {
     font-weight: 500;
     color: inherit;
@@ -470,10 +466,14 @@ layout > header
   background-position: 0 100%;
   background-repeat: no-repeat;
   background-size: 0 1px;
-  transition: background-size 0.3s ease-in-out;
 }
-.l-header-menu-item a:hover {
-  background-size: 100% 1px;
+@media (any-hover: hover) {
+  .l-header-menu-item a {
+    transition: background-size 0.3s ease-in-out;
+  }
+  .l-header-menu-item a:hover {
+    background-size: 100% 1px;
+  }
 }
 
 .l-header-menu-open-button,
@@ -484,7 +484,7 @@ layout > header
   padding: 6px 16px;
   text-transform: uppercase;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1080px) {
   .l-header-menu-open-button,
   .l-header-menu-close-button {
     display: none;
@@ -496,6 +496,16 @@ layout > header
   right: 16px;
   top: 16px;
   color: var(--color-font-base);
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.l-header-menu-close-button:focus, .l-header-menu-close-button:active {
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.l-header-menu-close-button:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
 }
 
 /*!
@@ -527,17 +537,8 @@ page > top > top-kv
 .top-kv {
   width: 100%;
   height: 100vh;
-  position: relative;
 }
-
-.top-kv-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-.top-kv-bg img {
+.top-kv img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;

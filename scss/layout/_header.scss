@@ -49,7 +49,7 @@ layout > header
   max-height: none;
   background-color: rgba(38, 38, 38, 0.95);
 
-  @include g.mq() {
+  @include g.mq(lg) {
     display: block;
     position: static;
     width: auto;
@@ -79,7 +79,7 @@ layout > header
 .l-header-menu-nav {
   width: 100%;
 
-  @include g.mq() {
+  @include g.mq(lg) {
     width: auto;
   }
 }
@@ -89,7 +89,7 @@ layout > header
   flex-direction: column;
   gap: 16px;
 
-  @include g.mq() {
+  @include g.mq(lg) {
     flex-direction: row;
     gap: 24px;
   }
@@ -102,7 +102,7 @@ layout > header
   font-size: 20px;
   text-align: center;
 
-  @include g.mq() {
+  @include g.mq(lg) {
     font-weight: 500;
     color: inherit;
     font-size: 15px;
@@ -115,10 +115,13 @@ layout > header
     background-position: 0 100%;
     background-repeat: no-repeat;
     background-size: 0 1px;
-    transition: background-size 0.3s ease-in-out;
 
-    &:hover {
-      background-size: 100% 1px;
+    @media (any-hover: hover) {
+      transition: background-size 0.3s ease-in-out;
+
+      &:hover {
+        background-size: 100% 1px;
+      }
     }
   }
 }
@@ -131,7 +134,7 @@ layout > header
   padding: 6px 16px;
   text-transform: uppercase;
 
-  @include g.mq() {
+  @include g.mq(lg) {
     display: none;
   }
 }
@@ -141,4 +144,17 @@ layout > header
   right: 16px;
   top: 16px;
   color: var(--color-font-base);
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+
+  &:focus,
+  &:active {
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
 }

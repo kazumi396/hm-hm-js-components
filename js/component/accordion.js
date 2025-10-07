@@ -16,7 +16,6 @@ export const initializeAccordion = () => {
 
     // 初期状態で閉じているなら高さ0にしておく
     if (!detail.open) {
-      // content.style.height = "0px";
       detail.classList.remove("is-open");
     }
 
@@ -42,10 +41,12 @@ export const initializeAccordion = () => {
         const closingAnim = content.animate(closingKeyframes, Options);
         // アニメーションの完了後にopen属性を取り除く
         closingAnim.onfinish = () => {
-          // content.style.height = "0px";
           detail.removeAttribute("open");
           // アニメーション中解除
           detail.classList.remove("is-animating");
+
+          // ScrollTriggerに再計算を依頼
+          document.dispatchEvent(new Event("accordion:toggle"));
         };
       } else {
         // アニメーション中にする
@@ -66,6 +67,9 @@ export const initializeAccordion = () => {
           openingAnim.onfinish = () => {
             // アニメーション中解除
             detail.classList.remove("is-animating");
+
+            // ScrollTriggerに再計算を依頼
+            document.dispatchEvent(new Event("accordion:toggle"));
           };
         });
       }

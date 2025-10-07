@@ -6,6 +6,7 @@ import { initializeDropDownMenu } from "./component/dropdownmenu.js";
 import { initializeModal } from "./component/modal.js";
 import { initializeTabMenu } from "./component/tabmenu.js";
 import { initializeAccordion } from "./component/accordion.js";
+import { initializeSmoothScroll } from "./component/smooth-scroll.js";
 
 switchViewport();
 window.addEventListener("resize", switchViewport);
@@ -17,3 +18,4 @@ initializeDropDownMenu();
 initializeModal();
 initializeTabMenu();
 initializeAccordion();
+initializeSmoothScroll();
